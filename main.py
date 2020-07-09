@@ -26,11 +26,7 @@ def voice_handler(bot:Bot,update:Update):
 	s=s[len(s)-6:len(s)-4]
 
 	#file.download('voice.ogg')
-	proxies = {
-  'http': 'http://62.210.124.248:3128'	,
-  'https': 'http://200.52.114.50:8080',
-	}
-	myfile=requests.get(file.file_path, proxies=proxies)
+	myfile=requests.get(file.file_path)
 	open('./sound/'+str(update.message.chat_id)+'_'+s+'.ogg', 'wb').write(myfile.content)
 	so.convert('./sound/'+str(update.message.chat_id)+'_'+s+'.ogg',str(update.message.chat_id)+'_'+s+'.ogg',update.message.chat_id)
 	bot.send_message(
@@ -43,11 +39,7 @@ def photo_handler(bot:Bot,update:Update):
 	s=str(file.file_path)
 	r=s[len(s)-4:len(s)]
 	s=s[len(s)-6:len(s)-4]
-	proxies = {
-  'http': 'http://62.210.124.248:3128'	,
-  'https': 'http://200.52.114.50:8080',
-	}
-	myfile=requests.get(file.file_path, proxies=proxies)
+	myfile=requests.get(file.file_path)
 	open('./photo/'+str(update.message.chat_id)+'_'+s+r, 'wb').write(myfile.content)
 	a=rec.recognize('./photo/'+str(update.message.chat_id)+'_'+s+r)
 	if(int(a)>0):
@@ -63,7 +55,7 @@ def photo_handler(bot:Bot,update:Update):
 
 def main():
 	bot=Bot(
-		token = "1080454982:AAEhI4zgqTtq08PAE6hO5cv14FB57gDT_zk",
+		token = "1332541954:AAFIRCqSSE7XS1bK1mBAXwRiOIi7UCOeP-A",
 		base_url="https://telegg.ru/orig/bot",
 		#base_url="https://telegg.ru/Savesoundbot"
 

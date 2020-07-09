@@ -2,7 +2,7 @@ from os import path
 import pydub
 from pydub import AudioSegment
 import os
-import database as dat
+#import database as dat
 
 
 def convert(path,name,idf):
