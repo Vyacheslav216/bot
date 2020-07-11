@@ -6,7 +6,7 @@ def savedata(val1,val2):
 	connection = pymysql.connect(
     		host='localhost',
 		user='bot',
-		password='testbot',
+		password='testbot!54',
    		db='Databasebot',
     		charset='utf8mb4',
 )
